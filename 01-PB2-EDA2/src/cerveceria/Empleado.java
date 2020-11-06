@@ -6,8 +6,14 @@ public abstract class Empleado {
 		protected Integer legajo;
 		protected Double sueldo;
 		
-		public abstract String enfocado_o_no_al_cliente();
 
+		public Empleado(String nombre, Integer dni, Integer legajo, Double sueldo) {
+			this.nombre = nombre;
+			this.dni = dni;
+			this.legajo = legajo;
+			this.sueldo = sueldo;
+		}
+		
 		public String getNombre() {
 			return nombre;
 		}

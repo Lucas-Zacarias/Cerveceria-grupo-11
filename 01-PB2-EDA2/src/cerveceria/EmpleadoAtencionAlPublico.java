@@ -4,13 +4,16 @@ public abstract class EmpleadoAtencionAlPublico extends Empleado {
 
 	protected String alias;
 	
-	@Override
-	public String enfocado_o_no_al_cliente() {
-		String area = "Enfocado al cliente";
-		return area;
+	public EmpleadoAtencionAlPublico(String nombre, Integer dni, Integer legajo, Double sueldo, String alias) {
+		super(nombre, dni, legajo, sueldo);
+		this.alias = alias;
 	}
 
-	public String getAlias() {
+	
+	
+
+	public String getAlias()
+	{
 		return alias;
 	}
 
