@@ -3,17 +3,22 @@ package cerveceria;
 public abstract class EmpleadoAtencionAlPublico extends Empleado {
 
 	protected String alias;
-	
+
 	public EmpleadoAtencionAlPublico(String nombre, Integer dni, Integer legajo, Double sueldo, String alias) {
 		super(nombre, dni, legajo, sueldo);
 		this.alias = alias;
 	}
 
-	
-	
+	public Boolean tomarPedido(Pedido pedido) {
+		Boolean tomaExitosa = false;
+		if (pedido != null) {
+			System.out.println("El empleado de atención al público toma el pedido");
+			tomaExitosa = true;
+		}
+		return tomaExitosa;
+	}
 
-	public String getAlias()
-	{
+	public String getAlias() {
 		return alias;
 	}
 
