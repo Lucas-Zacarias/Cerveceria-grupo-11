@@ -4,8 +4,8 @@ public abstract class EmpleadoAtencionAlPublico extends Empleado {
 
 	protected String alias;
 
-	public EmpleadoAtencionAlPublico(String nombre, Integer dni, Integer legajo, Double sueldo, String alias) {
-		super(nombre, dni, legajo, sueldo);
+	public EmpleadoAtencionAlPublico(String nombre, Integer dni, Double sueldo, String alias) {
+		super(nombre, dni, sueldo);
 		this.alias = alias;
 	}
 

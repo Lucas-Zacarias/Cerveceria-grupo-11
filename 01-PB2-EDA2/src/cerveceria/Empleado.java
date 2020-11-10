@@ -3,13 +3,11 @@ package cerveceria;
 public abstract class Empleado {
 	protected String nombre;
 	protected Integer dni;
-	protected Integer legajo;
 	protected Double sueldo;
 
-	public Empleado(String nombre, Integer dni, Integer legajo, Double sueldo) {
+	public Empleado(String nombre, Integer dni, Double sueldo) {
 		this.nombre = nombre;
 		this.dni = dni;
-		this.legajo = legajo;
 		this.sueldo = sueldo;
 	}
 
@@ -29,13 +27,6 @@ public abstract class Empleado {
 		this.dni = dni;
 	}
 
-	public Integer getLegajo() {
-		return legajo;
-	}
-
-	public void setLegajo(Integer legajo) {
-		this.legajo = legajo;
-	}
 
 	public Double getSueldo() {
 		return sueldo;
@@ -50,7 +41,6 @@ public abstract class Empleado {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
-		result = prime * result + ((legajo == null) ? 0 : legajo.hashCode());
 		return result;
 	}
 
@@ -67,11 +57,6 @@ public abstract class Empleado {
 			if (other.dni != null)
 				return false;
 		} else if (!dni.equals(other.dni))
-			return false;
-		if (legajo == null) {
-			if (other.legajo != null)
-				return false;
-		} else if (!legajo.equals(other.legajo))
 			return false;
 		return true;
 	}

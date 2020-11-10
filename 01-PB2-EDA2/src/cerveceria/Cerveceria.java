@@ -23,17 +23,17 @@ public class Cerveceria {
 		return this.nominaEmpleados.add(nuevoEmpleado);
 	}
 
-	public Empleado buscarEmpleadoPorDNIoLegajo(Integer numero) {
+	public Empleado buscarEmpleadoPorDNI(Integer numero) {
 		Empleado empleadoEncontrado = null;
 		for (Empleado empleado : this.nominaEmpleados) {
-			if (empleado.getDni() == numero || empleado.getLegajo() == numero) {
+			if (empleado.getDni() == numero) {
 				empleadoEncontrado = empleado;
 			}
 		}
 		return empleadoEncontrado;
 	}
 
-	public Empleado buscarEmpleadoDeAtencionAlPublico(String alias) {
+	public EmpleadoAtencionAlPublico buscarEmpleadoDeAtencionAlPublico(String alias) {
 		Empleado empleadoBuscado = null;
 		for (Empleado empleado : this.nominaEmpleados) {
 			if (empleado instanceof EmpleadoAtencionAlPublico
@@ -41,12 +41,12 @@ public class Cerveceria {
 				empleadoBuscado = empleado;
 			}
 		}
-		return empleadoBuscado;
+		return (EmpleadoAtencionAlPublico)empleadoBuscado;
 	}
 
-	public Boolean eliminarEmpleadoPorDNIoLegajo(Integer nro) {
+	public Boolean eliminarEmpleadoPorDNI(Integer nro) {
 		Boolean eliminacionExitosa = false;
-		Empleado empleadoAEliminar = buscarEmpleadoPorDNIoLegajo(nro);
+		Empleado empleadoAEliminar = buscarEmpleadoPorDNI(nro);
 		if (empleadoAEliminar != null) {
 			this.nominaEmpleados.remove(empleadoAEliminar);
 			eliminacionExitosa = true;
@@ -73,6 +73,11 @@ public class Cerveceria {
 		}
 		return empleadosDeNoAtencionAlPublico;
 	}
+	
+	public void eliminarATodosLosEmpleados() {
+		this.nominaEmpleados.clear();
+	}
+	
 
 	public Boolean agregarItemsAlMenu(Item nuevo) {
 		return this.menu.add(nuevo);

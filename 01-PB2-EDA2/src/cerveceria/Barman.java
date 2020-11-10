@@ -2,8 +2,8 @@ package cerveceria;
 
 public class Barman extends EmpleadoNoAtencionAlPublico implements LlevarPedido {
 
-	public Barman(String nombre, Integer dni, Integer legajo, Double sueldo) {
-		super(nombre, dni, legajo, sueldo);
+	public Barman(String nombre, Integer dni, Double sueldo) {
+		super(nombre, dni, sueldo);
 	}
 
 	@Override

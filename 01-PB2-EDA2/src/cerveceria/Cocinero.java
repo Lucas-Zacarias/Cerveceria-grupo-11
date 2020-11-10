@@ -2,8 +2,8 @@ package cerveceria;
 
 public class Cocinero extends EmpleadoNoAtencionAlPublico {
 
-	public Cocinero(String nombre, Integer dni, Integer legajo, Double sueldo) {
-		super(nombre, dni, legajo, sueldo);
+	public Cocinero(String nombre, Integer dni, Double sueldo) {
+		super(nombre, dni, sueldo);
 	}
 
 	@Override
